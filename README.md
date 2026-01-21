@@ -1,1 +1,2 @@
-可用的setuptools版本 pip install setuptools==58.0.4
+# 这是什么
+这是25赛季实机视觉代码存档。
