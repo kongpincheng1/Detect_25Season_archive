@@ -15,13 +15,32 @@ import cv2
 import numpy as np
 from ultralytics import YOLO
 import os
+from ament_index_python.packages import get_package_share_directory
 
 class YOLOv5ROS2(Node):
     def __init__(self): # <<< MODIFIED:  def init -> def __init__ (这是Python类的标准构造函数名)
         super().__init__('yolov5_ros2')
 
         # --- 参数声明 ---
-        self.declare_parameter('weights_path', '/home/kpc/weights/best_sim.pt')
+        pkg_name = 'detect'  # 替换的包名
+        
+        try:
+            pkg_share_dir = get_package_share_directory(pkg_name)
+            
+            # 假设你的pt文件在包的根目录
+            default_weights_path = os.path.join(pkg_share_dir, 'models', 'best_sim.pt')
+            
+            # 检查文件是否存在，不存在则使用备用路径
+            if not os.path.exists(default_weights_path):
+                self.get_logger().warn(f"Default weights file not found at {default_weights_path}")
+                # 可以设置为空字符串或其他默认值
+                default_weights_path = ""
+                
+        except PackageNotFoundError:
+            self.get_logger().error(f"Package {pkg_name} not found")
+            default_weights_path = ""
+
+        self.declare_parameter('weights_path', default_weights_path)
         self.declare_parameter('conf_threshold', 0.4)
         self.declare_parameter('color_topic', '/camera')
         self.declare_parameter('depth_topic', '/depth_camera')
