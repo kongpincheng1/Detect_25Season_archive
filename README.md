@@ -7,8 +7,9 @@ ros2 run detect test
 ```
 
 # 注意
-使用前请根据自己计算机的路径修改`detect_ros_sim_lowHz.py`中权重文件`best_sim.pt`的路径,`best_sim.pt`已经给出，这是yolov8适用于仿真环境的模型，后续如果有需要可自行训练其他。<br>
-同时也请适当修改`detect_ros_sim_lowHz.py`中`video_output_path`的路径，这可以将每次的画面录像保存到特定路径，你可以将它关掉。
+程序运行的是视觉模型文件是`models`下的`best_sim.pt`,这是yolov8适用于仿真环境的模型，后续如果有需要可自行训练其他。<br>
+适当修改`detect_ros_sim_lowHz.py`中`video_output_path`的路径，这可以将每次的画面录像保存到特定路径，你可以将它关掉。<br>
+在`setup.py`中，设置的程序入口名称为`test`,你可以自行更改。
 
 ## 这个ros2包的名称为detect
 
