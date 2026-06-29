@@ -1,6 +1,7 @@
 # 说明
 这是25赛季仿真视觉代码的存档，删去了其他无用的代码。
 
+如果你不知道怎么做，请转至[**工作空间仓库**](https://github.com/kongpincheng1/25Season_Fly_ws_archive)观看视频教程。
 
 # 重要
 1. 本代码仓库包含两个分支，分别为`Detect_25Season_archive`和`25_season_Realfly_archive`,两个分支分别存放仿真和实机的代码。
