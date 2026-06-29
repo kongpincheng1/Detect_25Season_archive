@@ -1,6 +1,12 @@
 # 说明
 这是25赛季仿真视觉代码的存档，删去了其他无用的代码。
 
+
+# 重要
+1. 本代码仓库包含两个分支，分别为`Detect_25Season_archive`和`25_season_Realfly_archive`,两个分支分别存放仿真和实机的代码。
+2. 运行的程序为`detect`文件夹下的`py`文件。
+
+# 补充
 仿真运行的程序为`detect_ros_sim_lowHz.py`
 
 这个ros2包的名称为detect
@@ -20,7 +26,7 @@ ros2 run detect test
 
 3.在`setup.py`中，设置的程序入口名称为`test`,你可以自行更改。
 
-
+# Troubleshooting 
 
 ### 可用的setuptools版本 pip install setuptools==58.0.4
 
